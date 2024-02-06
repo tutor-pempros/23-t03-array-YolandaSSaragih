@@ -9,8 +9,8 @@ int main() {
 
     int min = 101;
     int max = -101;
-    int total = 0;
-    int max_y = 0;
+    int total = 0; // Mengganti variabel y menjadi total
+    int max_m = 0;
     int x;
     int prev_x;
     //nilai pertama
@@ -28,16 +28,21 @@ int main() {
         if (x > max) {
             max = x;
         }
+
+        // Menambahkan nilai ke dalam total sum
         total += x;
 
-        int diff = abs(x - prev_x);
-        if (diff > max_y) {
-      max_y = max_y;
+        int diff = abs(x - prev_x); // Menggunakan x dan prev_num
+        if (diff > max_m) {
+            max_m = diff;
         }
+
+        // Mengupdate nilai sebelumnya
         prev_x = x;
     }
 
-    printf("%d\n%d\n%.2f\n%d\n", min, max, (float)total / n, max_y);
+    // Menampilkan nilai terkecil, terbesar, rata-rata, dan jarak terjauh
+    printf("%d\n%d\n%.2f\n%d\n", min, max, (float)total / n, max_m);
 
     return 0;
 }
